@@ -1,5 +1,3 @@
-# EthGlobal-Guide
-
 <Section name="1. Introduction" description="Introduction to Livepeer Ecosystem">
 
 ## What is the Livepeer Network
@@ -32,40 +30,29 @@ c. Video NFT minting
 
 > ⚠️ There are different ways to upload an asset (video & audio).
 
-- Using API
+When uploading an asset using the API, there are two methods.
 
-  - Upload with URL
+- Upload with URL (providing a downloadable URL)
 
-  - Upload with locak storage
+- Upload with local storage (provide a `.mp4` file with H.264 video codec and AAC audio codec )
 
-- Using SDK
-
-  - Upload with local storage
-
-- Using the dashboard
-
-  - Upload with local storage
+When using either the SDK or dashboard for uploading an asset, only providing a `.mp4` file with H.264 video codec and AAC audio codec is required.
 
 ### Question: T/F You can upload a video asset via the dashboard, sdk, or API?
 
 <Quiz id={} />
 
-
 >TRUE
 
 ## Deleting an Asset
 
-- Via the API
-
-  - A DELETE Request
+When deleting assets in Livepeer Studio, it can only be done through the API at the moment using the following endpoint:
 
     - DELETE `/multistream/target/{id}` deletes an existing multistream target object. Make sure to remove any references to the target on existing streams before actually deleting it from the API.
 
     - Response should return `204 No Content`
 
-- Via the Dashboard
-
-  - Deleting an asset manually
+- Deleting an asset manually
 **Question: T/F: You can delete an asset via the SDK or the dashboard.
 <Quiz id={} />
 
@@ -118,14 +105,16 @@ Livepeer Studio has the ability to multistream by pushing the livestream to mult
 
 In order to playback a livestream with the playbackURL, a video player has to be used that supports HLS format. Livepeer Studio has a video player included in the SDK for video playabck, or the playbackURL can be passed in the Safari browser as it supports HLS natively.
 
-If wanting to only play the audio of livestream, just add `?video=false` at thee 
+>If wanting to only play the audio of livestream, just add `?video=false` at the end of the playbackURL.
 
 </Section>
 
-
 <Section name="4. Minting Videos" description="Introduction to Mint NFT videos">
 
-[ ] [Minting Video Guide](https://docs.livepeer.studio/guides/mint-a-video-nft)
+## Minting Video NFTs
+Livepeer Studio has a step-by-step guide for minting video NFTs using the Video NFT SDK or creating your own transaction.
+
+ 🌿 [Minting Video Guide](https://docs.livepeer.studio/guides/mint-a-video-nft)
 
 </Section>
 
@@ -133,12 +122,41 @@ If wanting to only play the audio of livestream, just add `?video=false` at thee
 
 ## Using Livepeer Studio in your project
 
-[ ] 🗝 [Create an API key](https://docs.livepeer.studio/quickstart)
+ 🗝 [Create an API key](https://docs.livepeer.studio/quickstart)
 
-[ ] 🖥 [Dashboard](https://livepeer.studio/dashboard)
+ 🖥 [Dashboard](https://livepeer.studio/dashboard)
 
-[ ] 🧰 [SDK](https://livepeerjs.org/)
+🧰 [SDK](https://livepeerjs.org/)
 
-[ ] 🛠 [API](https://docs.livepeer.studio/category/api)
+ 🛠 [API](https://docs.livepeer.studio/category/api)
+
+</Section>
+
+<Section name="Livepeer Studio Resources" description="Additional Resources">
+
+## Livepeer Studio Resources
+
+### [Quickstart](https://docs.livepeer.studio/quickstart)
+
+Get an API key and start building with Livepeer Studio.
+
+### [Stream via OBS](https://docs.livepeer.studio/guides/live/stream-via-obs)
+
+Using [OBS](https://obsproject.com/) software for livestreaming.
+### [In-browser Streaming](https://docs.livepeer.studio/guides/live/stream-from-the-browser)
+
+Using Livepeer Studio's [WebRTMP SDK](https://github.com/livepeer/webrtmp-sdk) from in-browser livestreams.
+
+### [Support Matrix](https://docs.livepeer.studio/reference/support-matrix)
+
+Descriptions and highlights of some of Livepeer Studio's capabilities.
+
+### [Example Applications](https://docs.livepeer.studio/reference/examples)
+
+Example of applications that incorporated Livepeer Studio.
+
+### [Discord](https://discord.gg/xVYJxEr3)
+
+Join the Livepeer Studio Community
 
 </Section>

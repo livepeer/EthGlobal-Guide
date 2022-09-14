@@ -2,20 +2,21 @@
 
 ## What is the Livepeer Network
 
-Livepeer is a decentralized video transcoding network that aims to enable cost effective, resilient, and censorship resistant video streaming, which today consumes 80% of internet bandwidth.
+Livepeer is a decentralized video transcoding network that aims to enable cost effective, resilient, and censorship resistant video streaming.
 
 Through storytelling, illustration, and data, the [Livepeer Primer](https://livepeer.org/primer) explains, at a high level, the problem Livepeer solves, and how it works.
 
 ## What is Livepeer Studio
 
-[Livepeer Studio](https://livepeer.studio/) provides all the tools needed to build web3 video apps with livestreaming, On Demand, and video NFT minting features.
+[Livepeer Studio](https://livepeer.studio/) is the hosted gateway to the Livepeer Network and enables developers to quickly and easily integrate video capabilities such as live streaming, On Demand video, and video NFT minting into their applications. Developers can use [livepeer.js](https://livepeerjs.org/) or the [API](https://docs.livepeer.studio/) to build with Livepeer Studio. 
 
 <!-- <Quiz id={} />
 
-### Question: What tool(s) does Livepeer Studio offer?
+### Question: What capabilities does Livepeer Studio offer?
+
 a. Live Streaming
 
-b. Video On Demand
+b. On Demand
 
 c. Video NFT minting
 
@@ -23,41 +24,26 @@ c. Video NFT minting
 
 </Section>
 
-<Section name="2. On Demand" description="Introduction to On Demand Feature ">
+<Section name="2. Building with On Demand" description="How to get started with On Demand">
 
 ## Uploading an Asset
+   
+   Livepeer Studio's On Demand functionality allows developers to upload and playback existing video assets. This allows your users to ensure that any videos played on your frontend are opitimized for playback by reducing start up time and adapting to your users bandwidth enviornment. Additionally, video assets can be optionally stored at IPFS, so you can easily mint NFTs. 
 
-> ⚠️ There are different ways to upload an asset (video & audio).
 
 When uploading an asset using the API, there are two methods.
 
 - Upload with URL (providing a downloadable URL)
 
-- Upload with local storage (provide a `.mp4` file with H.264 video codec and AAC audio codec )
+- Upload with local storage (provide a `.mp4` file)
 
 When using either the SDK or dashboard for uploading an asset, only providing a `.mp4` file with H.264 video codec and AAC audio codec is required.
 
 <!-- <Quiz id={} />
 
-### Question: T/F You can upload a video asset via the dashboard, sdk, or API?
+### Question: T/F You can upload a video asset via the dashboard, SDK, or API?
 
 TRUE -->
-
-## Deleting an Asset
-
-When deleting assets in Livepeer Studio, it can only be done through the API at the moment using the following endpoint:
-
-- DELETE `/multistream/target/{id}` deletes an existing multistream target object. Make sure to remove any references to the target on existing streams before actually deleting it from the API.
-
-- Response should return `204 No Content`
-
-- Deleting an asset manually
-
-<!-- <Quiz id={} />
-
-**Question: T/F: You can delete an asset via the SDK or the dashboard.
-
-FALSE,you can only upload an asset using the API at the moment. -->
 
 ## Updating an Asset
 
@@ -65,7 +51,7 @@ You can update the following attributes of an asset
 
 1. asset name
 
-2. storage
+2. storage (including IPFS)
 
 3. metadata for the video/audio asset
 
@@ -73,54 +59,57 @@ You can update the following attributes of an asset
 
    - description
 
-   - anything you want to customize
+   - anything you want to customize to optimize capability with your marketplace of choice
 
 <!-- <Quiz id={} />
 
-**QUESTION: T/F: You can update an existing video/audio file.**
+**QUESTION: T/F: Livepeer Studio offers IPFS storage for video assets**
 
-FALSE, you can only update the name, storage and metadata for the asset. -->
+TRUE, Livepeer Studio currently supports optionally storing video assets at IPFS. -->
 
 </Section>
 
-<Section name="3. Livestream" description="Introduction to Livestream Feature ">
+<Section name="3. Livestream" description="Introduction to Livestreaming ">
 
-## Starting a livestreaming
+## Building livestreaming into your application
+   
+   Livepeer Studio makes it easy to implement live streaming video into your application. Using our Dashboard, you can test out streaming with Livepeer for yourself. 
+   
+   1. [Download OBS](https://obsproject.com/), a common video encoder
+   1. Create an account at livepeer.studio
+   2. Navigate to the 'Streams' tab on the left-hand navigation
+   3. Click 'Create Stream' at the top right hand corner
+   4. Copy the RTMP ingest URL
+   5. Under 'Settings' in OBS, select 'Stream'
+   7. Paste the RTMP ingest URL in the 'Server' field
+   8. On the Dashboard, copy your Stream Key
+   9. Paste it into the 'Stream Key' field in OBS
+   10. Save changes and hit 'Start Streaming'
+   11. Navigate back to the stream page to view your stream!
+   
+   The Studio API and SDK can help you build an application that uses this capability. Check out [our docs](https://docs.livepeer.studio/guides/live/create-a-livestream) to learn more or start building with the [SDK](https://livepeerjs.org/). 
+   
+   
+## Other livestreaming features
 
-Log in to the Livepeer Studio Dashboard
-Navigate to the [Streams page](https://www.livepeer.studio/dashboard/streams).
+- Video Playback
 
- On this page, you can create new streams and delete them. You can also click on a stream to find out details about the stream such as:
-
-- Ingest URL
-
-- Playback URL
-
-- Health Metrics
-
-- Stream Key
-
-## Recording a livestreaming
-
-  You can record a livestream either throught the dashboard, SDK or the API.
-
-  >Recording livestreams will only work if it is enabled before the live stream starts.
+In order to playback a livestream with the playbackURL, a video player has to be used that supports HLS format. Livepeer Studio has a video player included in the SDK and we have an easy to embed player in our [documentation.](https://docs.livepeer.studio/guides/playback-a-video-stream)
+   
+   - Recording
+   
+You can record a livestream either throught the dashboard, SDK or the API.[Check out our docs](https://docs.livepeer.studio/guides/live/record-a-livestream) for more information.
 
 - Multistreaming
 
 Livepeer Studio has the ability to multistream by pushing the livestream to multiple ingest points of other targets such as Twitch, YouTube and many others.
 
-- Video Playback
-
-In order to playback a livestream with the playbackURL, a video player has to be used that supports HLS format. Livepeer Studio has a video player included in the SDK for video playabck, or the playbackURL can be passed in the Safari browser as it supports HLS natively.
-
->If wanting to only play the audio of livestream, just add `?video=false` at the end of the playbackURL.
 
 <!-- <Quiz id={} />
 
 **QUESTION: T/F: Can you paste a playback URL in the browser to view the stream?**
 
-False, you need a video player in order to view the livestream in the borwser. The only exception is using the Safari browser as it supports HLS natively. -->
+False, you'll need a player that is compatible with livestreaming to view your video. Check our our [docs](https://docs.livepeer.studio/guides/playback-a-video-stream) for more information.  -->
 
 </Section>
 

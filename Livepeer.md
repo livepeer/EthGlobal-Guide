@@ -1,32 +1,22 @@
 <Section name="1. Introduction" description="Introduction to Livepeer Ecosystem">
 
-## What is the Livepeer Network
+# What is the Livepeer Network
 
 Livepeer is a decentralized video transcoding network that aims to enable cost effective, resilient, and censorship resistant video streaming.
 
 Through storytelling, illustration, and data, the [Livepeer Primer](https://livepeer.org/primer) explains, at a high level, the problem Livepeer solves, and how it works.
 
-## What is Livepeer Studio
+# What is Livepeer Studio
 
 [Livepeer Studio](https://livepeer.studio/) is the hosted gateway to the Livepeer Network and enables developers to quickly and easily integrate video capabilities such as live streaming, On Demand video, and video NFT minting into their applications. Developers can use [livepeer.js](https://livepeerjs.org/) or the [API](https://docs.livepeer.studio/) to build with Livepeer Studio. 
 
-<!-- <Quiz id={} />
-
-### Question: What capabilities does Livepeer Studio offer?
-
-a. Live Streaming
-
-b. On Demand
-
-c. Video NFT minting
-
-**d. All of the above** -->
+<Quiz id={"wgzm1"} />
 
 </Section>
 
 <Section name="2. Building with On Demand" description="How to get started with On Demand">
 
-## Uploading an Asset
+# Uploading an Asset
    
    Livepeer Studio's On Demand functionality allows developers to upload and playback existing video assets. This allows your users to ensure that any videos played on your frontend are opitimized for playback by reducing start up time and adapting to your users bandwidth enviornment. Additionally, video assets can be optionally stored at IPFS, so you can easily mint NFTs. 
 
@@ -39,83 +29,71 @@ When uploading an asset using the API, there are two methods.
 
 When using either the SDK or dashboard for uploading an asset, only providing a `.mp4` file with H.264 video codec and AAC audio codec is required.
 
-<!-- <Quiz id={} />
+<Quiz id={"nn9zw"} />
 
-### Question: T/F You can upload a video asset via the dashboard, SDK, or API?
+---
 
-TRUE -->
-
-## Updating an Asset
+# Updating an Asset
 
 You can update the following attributes of an asset
 
 1. asset name
-
 2. storage (including IPFS)
-
 3. metadata for the video/audio asset
-
    - title
-
    - description
-
    - anything you want to customize to optimize capability with your marketplace of choice
 
-<!-- <Quiz id={} />
 
-**QUESTION: T/F: Livepeer Studio offers IPFS storage for video assets**
+<Quiz id={"g82zv"} />
 
-TRUE, Livepeer Studio currently supports optionally storing video assets at IPFS. -->
 
 </Section>
 
 <Section name="3. Livestream" description="Introduction to Livestreaming ">
 
-## Building livestreaming into your application
+# Building livestreaming into your application
    
-   Livepeer Studio makes it easy to implement live streaming video into your application. Using our Dashboard, you can test out streaming with Livepeer for yourself. 
-   
-   1. [Download OBS](https://obsproject.com/), a common video encoder
-   1. Create an account at livepeer.studio
-   2. Navigate to the 'Streams' tab on the left-hand navigation
-   3. Click 'Create Stream' at the top right hand corner
-   4. Copy the RTMP ingest URL
-   5. Under 'Settings' in OBS, select 'Stream'
-   7. Paste the RTMP ingest URL in the 'Server' field
-   8. On the Dashboard, copy your Stream Key
-   9. Paste it into the 'Stream Key' field in OBS
-   10. Save changes and hit 'Start Streaming'
-   11. Navigate back to the stream page to view your stream!
-   
-   The Studio API and SDK can help you build an application that uses this capability. Check out [our docs](https://docs.livepeer.studio/guides/live/create-a-livestream) to learn more or start building with the [SDK](https://livepeerjs.org/). 
-   
-   
-## Other livestreaming features
+Livepeer Studio makes it easy to implement live streaming video into your application. Using our Dashboard, you can test out streaming with Livepeer for yourself. 
 
-- Video Playback
+1. [Download OBS](https://obsproject.com/), a common video encoder
+1. Create an account at livepeer.studio
+2. Navigate to the 'Streams' tab on the left-hand navigation
+3. Click 'Create Stream' at the top right hand corner
+4. Copy the RTMP ingest URL
+5. Under 'Settings' in OBS, select 'Stream'
+7. Paste the RTMP ingest URL in the 'Server' field
+8. On the Dashboard, copy your Stream Key
+9. Paste it into the 'Stream Key' field in OBS
+10. Save changes and hit 'Start Streaming'
+11. Navigate back to the stream page to view your stream!
+
+The Studio API and SDK can help you build an application that uses this capability. Check out [our docs](https://docs.livepeer.studio/guides/live/create-a-livestream) to learn more or start building with the [SDK](https://livepeerjs.org/). 
+
+   
+# Other livestreaming features
+
+**Video Playback**
 
 In order to playback a livestream with the playbackURL, a video player has to be used that supports HLS format. Livepeer Studio has a video player included in the SDK and we have an easy to embed player in our [documentation.](https://docs.livepeer.studio/guides/playback-a-video-stream)
    
-   - Recording
+**Recording**
    
 You can record a livestream either throught the dashboard, SDK or the API.[Check out our docs](https://docs.livepeer.studio/guides/live/record-a-livestream) for more information.
 
-- Multistreaming
+**Multistreaming**
 
 Livepeer Studio has the ability to multistream by pushing the livestream to multiple ingest points of other targets such as Twitch, YouTube and many others.
 
 
-<!-- <Quiz id={} />
+<Quiz id={"7bfm6"} />
 
-**QUESTION: T/F: Can you paste a playback URL in the browser to view the stream?**
-
-False, you'll need a player that is compatible with livestreaming to view your video. Check our our [docs](https://docs.livepeer.studio/guides/playback-a-video-stream) for more information.  -->
 
 </Section>
 
 <Section name="4. Minting Videos" description="Introduction to Mint NFT videos">
 
-## Minting Video NFTs
+# Minting Video NFTs
 Livepeer Studio has a step-by-step guide for minting video NFTs using the Video NFT SDK or creating your own transaction.
 
  🌿 [Minting Video Guide](https://docs.livepeer.studio/guides/mint-a-video-nft)
@@ -124,7 +102,7 @@ Livepeer Studio has a step-by-step guide for minting video NFTs using the Video 
 
 <Section name="5. Using Livepeer Studio" description="Introduction Using Livepeer Studio">
 
-## Using Livepeer Studio in your project
+# Using Livepeer Studio in your project
 
  🗝 [Create an API key](https://docs.livepeer.studio/quickstart)
 
@@ -138,7 +116,7 @@ Livepeer Studio has a step-by-step guide for minting video NFTs using the Video 
 
 <Section name="Livepeer Studio Resources" description="Additional Resources">
 
-## Livepeer Studio Resources
+# Livepeer Studio Resources
 
 ### [Quickstart](https://docs.livepeer.studio/quickstart)
 
